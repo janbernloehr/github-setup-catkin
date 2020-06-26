@@ -28,7 +28,7 @@ if [ -f package.xml ]; then
   mv * tmp-src;
   mv tmp-src src;
 fi
-  catkin_init_workspace;
+catkin install;
 env`;
   let options: child_process.ExecSyncOptionsWithStringEncoding = {
     encoding: 'utf8'
