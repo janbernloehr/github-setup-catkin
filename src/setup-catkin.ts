@@ -7,8 +7,8 @@ function installRos(version: string) {
 sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654 &&
 sudo apt-get update &&
 sudo apt-get -qq update -y &&
-( sudo apt-get -qq install build-essential openssh-client ros-${version}-ros-base python3-catkin-pkg python3-rosdep -y ||
-sudo apt-get -qq install build-essential openssh-client ros-${version}-ros-base python-catkin-pkg python-rosdep -y ; ) &&
+( sudo apt-get -qq install build-essential openssh-client ros-${version}-ros-base python3-catkin-pkg python3-rosdep python-catkin-tools -y ||
+sudo apt-get -qq install build-essential openssh-client ros-${version}-ros-base python-catkin-pkg python-rosdep python-catkin-tools -y ; ) &&
 sudo rosdep init &&
 rosdep update`;
   child_process.execSync(command, {stdio: 'inherit'});
